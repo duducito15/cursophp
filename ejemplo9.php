@@ -16,23 +16,19 @@
     <section>
         <?php
         error_reporting(0);
-        $producto = $_POST['selProducto'];
+        $producto = $_POST["selProducto"];
 
-        $precio = 0;
         switch ($producto) {
-            case 'Lavadora':
-                $precio = 1500;
-                break;
-            case 'Refrigeradora':
-                $precio = 3500;
-                break;
-            case 'Radiograbadora':
-                $precio = 2800;
-                break;
-            case 'Tostadora':
-                $precio = 500;
-                break;
+            case 'Lavadora': $precio = 1500; break;
+            case 'Refrigeradora': $precio = 3500; break;
+            case 'Radiograbadora': $precio = 2800; break;
+            case 'Tostadora': $precio = 500; break;
         }
+
+        if ($producto=='Lavadora') $sell ='SELECTED'; else $sell='';
+        if ($producto=='Refrigeradora') $selre ='SELECTED'; else $selre='';
+        if ($producto=='Radiograbadora') $selra ='SELECTED'; else $selra='';
+        if ($producto=='Tostadora') $selt ='SELECTED'; else $selt='';
 
         ?>
         <form action="ejemplo9.php" method="post">
@@ -41,17 +37,23 @@
                     <td>Producto</td>
                     <td>
                         <select name="selProducto" id="">
-                            <option value="Lavadora">Lavadora</option>
-                            <option value="Refrigeradora">Refrigeradora</option>
-                            <option value="Radiograbadora">Radiograbadora</option>
-                            <option value="Tostadora">Tostadora</option>
+                            <option value="Lavadora" <?php echo $sell; ?> >Lavadora</option>
+                            <option value="Refrigeradora" <?php echo $selre; ?>>Refrigeradora</option>
+                            <option value="Radiograbadora" <?php echo $selra; ?>>Radiograbadora</option>
+                            <option value="Tostadora" <?php echo $selt; ?>>Tostadora</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>Precio</td>
                     <td>
-                        <input type="text" name="txtPrecio" readonly="readonly">
+                        <input type="text" name="txtPrecio" readonly="readonly"
+                        value="<?php
+                            if ($_POST["selProducto"]) {
+                                echo number_format($precio,2,'.','');
+                            }
+                        ?>"
+                        >
                     </td>
                 </tr>
                 <tr>
