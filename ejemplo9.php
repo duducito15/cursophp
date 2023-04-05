@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago al credito</title>
 </head>
+
 <body>
     <header>
         <img src="electro.jfif" alt="Electrodomesticos">
         <h3 id="centrado">Venta de Productos</h3>
     </header>
     <section>
+        <?php
+        error_reporting(0);
+        $producto = $_POST['selProducto'];
 
+        $precio = 0;
+        switch ($producto) {
+            case 'Lavadora':
+                $precio = 1500;
+                break;
+            case 'Refrigeradora':
+                $precio = 3500;
+                break;
+            case 'Radiograbadora':
+                $precio = 2800;
+                break;
+            case 'Tostadora':
+                $precio = 500;
+                break;
+        }
+
+        ?>
         <form action="ejemplo9.php" method="post">
-            <table border="0" width="500" cellspacing="0" cellpadding="0"> 
+            <table border="0" width="500" cellspacing="0" cellpadding="0">
                 <tr>
                     <td>Producto</td>
                     <td>
@@ -29,7 +51,7 @@
                 <tr>
                     <td>Precio</td>
                     <td>
-                        <input type="text" name="txtPrecio">
+                        <input type="text" name="txtPrecio" readonly="readonly">
                     </td>
                 </tr>
                 <tr>
@@ -63,4 +85,5 @@
         <h6 id="centrado">Todos los derechos reservados - 2023</h6>
     </footer>
 </body>
+
 </html>
