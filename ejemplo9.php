@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="electro.jpg" alt="Electrodomesticos">
+        <img src="electro.jfif" alt="Electrodomesticos">
         <h3 id="centrado">Venta de Productos</h3>
     </header>
     <section>
@@ -39,12 +39,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Subtotal</td>
+                    <td>
+                        <input type="text" name="txtSubtotal">
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>Cuotas</td>
+                    <td>
+                        <select name="selCuotas" id="">
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="9">9</option>
+                            <option value="12">12</option>
+                        </select>
+                    </td>
                 </tr>
             </table>
         </form>
