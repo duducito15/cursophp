@@ -36,7 +36,7 @@
                 <tr>
                     <td>Producto</td>
                     <td>
-                        <select name="selProducto" id="">
+                        <select name="selProducto" onchange="this.form.submit()">
                             <option value="Lavadora" <?php echo $sell; ?> >Lavadora</option>
                             <option value="Refrigeradora" <?php echo $selre; ?>>Refrigeradora</option>
                             <option value="Radiograbadora" <?php echo $selra; ?>>Radiograbadora</option>
@@ -60,6 +60,9 @@
                     <td>Cantidad</td>
                     <td>
                         <input type="text" name="txtCantidad">
+                    </td>
+                    <td>
+                        <input type="submit" value="Calcular" name="btnCalcular">
                     </td>
                 </tr>
                 <tr>
