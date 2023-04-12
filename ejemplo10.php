@@ -54,6 +54,9 @@ $email = "juanperez@gmail.com";
 $codigo = "C01234";
 
 echo strlen($email)."<br>";
+$pos = strpos($email,"@");
+echo $email;
+echo "El simbolo de @ esta en la posicion ".$pos;
 
 
 ?>
