@@ -27,6 +27,24 @@ if (empty($clave)) {
     echo "OK<br>";
 }
 
+if (is_integer($edad)) {
+    echo "Edad ingresada correctamente<br>";
+} else{
+    echo "Edad no correcta<br>";
+}
 
+if (is_double($talla)) {
+    echo "Talla ingresada correctamente<br>";
+} else{
+    echo "Talla no correcta<br>";
+}
+
+if (is_string($nombre)) {
+    echo "Nombre ingresado correctamente<br>";
+} else{
+    echo "Nombre no correcto<br>";
+}
+
+echo var_dump($nombre);
 
 ?>
