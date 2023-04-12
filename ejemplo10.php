@@ -45,6 +45,15 @@ if (is_string($nombre)) {
     echo "Nombre no correcto<br>";
 }
 
-echo var_dump($nombre);
+/*echo var_dump($nombre);
+echo var_dump($edad);
+echo var_dump($talla);
+*/
+//Funciones de cadena
+$email = "juanperez@gmail.com";
+$codigo = "C01234";
+
+echo strlen($email)."<br>";
+
 
 ?>
