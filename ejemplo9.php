@@ -61,7 +61,7 @@
                     <td>
                         <input type="text" name="txtPrecio" readonly="readonly" value="<?php
                                                                                         if ($_POST["selProducto"]) {
-                                                                                            echo number_format($precio, 2, '.', '');
+                                                                                            echo number_format($precio, 2, '.', ',');
                                                                                         }
                                                                                         ?>">
                     </td>
@@ -84,7 +84,7 @@
                     <td>
                         <input type="text" name="txtSubtotal" value="
                         <?php
-                            echo number_format($subtotal, 2, '.', '');
+                            echo number_format($subtotal, 2, '.', ',');
                         ?>" readonly="readonly">
                     </td>
                 </tr>
