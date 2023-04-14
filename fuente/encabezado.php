@@ -5,19 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilo.css">
-    <title>Fuente de soda</title>
+    <title></title>
 </head>
 <body>
-    <header>
-        <?php 
-            include('encabezado.php');
-        ?>
-    </header>
-    <section>
-
-    </section>
-    <footer>
-
-    </footer>
+    <img src="helados.jpg" alt="Heladeria">
+    <h2 id="centrado">Fuente de Soda</h2>
 </body>
 </html>
