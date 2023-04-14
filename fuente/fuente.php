@@ -16,11 +16,16 @@
         ?>
     </header>
     <section>
+        <?php 
+        error_reporting(0);
+        include('calculos.php');
+        ?>
         <form action="fuente.php" method="post">
             <table border="1" cellspacing="1" cellpadding="1">
                 <tr>
                     <td>Cliente</td>
-                    <td colspan="3"><input type="text" name="txtCliente" size="50"></td>
+                    <td colspan="3"><input type="text" name="txtCliente" size="50" 
+                    value="<?php echo $cliente;?>"></td>
                 </tr>
                 <tr id="fila" >
                     <td>Listado de Productos</td>
@@ -30,9 +35,10 @@
                 </tr>
                 <tr>
                     <td>Ensalada de frutas</td>
-                    <td><input type="text" name="txtEnsalada" size="15"></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="text" name="txtEnsalada" size="15" 
+                    value="<?php echo $cantEnsalada;?>"></td>
+                    <td><?php $ensalada; ?></td>
+                    <td><?php $subtotalEnsalada; ?></td>
                 </tr>
                 <tr>
                     <td>Jugo de frutas</td>
