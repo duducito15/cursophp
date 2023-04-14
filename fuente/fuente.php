@@ -37,35 +37,47 @@
                     <td>Ensalada de frutas</td>
                     <td><input type="text" name="txtEnsalada" size="15" 
                     value="<?php echo $cantEnsalada;?>"></td>
-                    <td><?php $ensalada; ?></td>
-                    <td><?php $subtotalEnsalada; ?></td>
+                    <td><?php echo number_format($ensalada,2); ?></td>
+                    <td><?php echo number_format($subtotalEnsalada,2); ?></td>
                 </tr>
                 <tr>
                     <td>Jugo de frutas</td>
-                    <td><input type="text" name="txtJugo" size="15"></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="text" name="txtJugo" size="15"
+                    value="<?php echo $cantJugo;?>"></td>
+                    <td><?php echo $jugo; ?></td>
+                    <td><?php echo $subtotalJugo; ?></td>
                 </tr>
                 <tr>
                     <td>Helado</td>
-                    <td><input type="text" name="txtHelado" size="15"></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="text" name="txtHelado" size="15"
+                    value="<?php echo $cantHelado;?>"></td>
+                    <td><?php echo $helado; ?></td>
+                    <td><?php echo $subtotalHelado; ?></td>
                 </tr>
                 <tr>
                     <td>Sandwitch</td>
-                    <td><input type="text" name="txtSandwitch" size="15"></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="text" name="txtSandwitch" size="15"
+                    value="<?php echo $cantSandwitch;?>"></td>
+                    <td><?php echo $sandwitch; ?></td>
+                    <td><?php echo $subtotalSandwitch; ?></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td  colspan="3"><input type="submit" value="Finalizar venta"></td>
+                    <td colspan="3"><input type="submit" value="Finalizar venta"
+                    name="btnFinalizar"></td>
                 </tr>
+                <?php
+                    if($_POST['btnFinalizar']){
+                ?>
                 <tr>
                     <td>Total a Pagar</td>
-                    <td colspan="3"></td>
+                    <td colspan="3">
+                        <?php echo $total;?>
+                    </td>
                 </tr>
+                <?php
+                    }
+                ?>
             </table>
         </form>
     </section>
