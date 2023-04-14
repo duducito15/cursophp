@@ -1,7 +1,26 @@
 body{
     font-family: "tahoma";
-    font-size: 20px;
+    font-size: 14px;
 }
 #centrado{
     text-align: center;
+}
+table{
+    margin: auto;
+}
+img{
+    margin: auto;
+    display: block;
+}
+td{
+    border: solid 1px #006699;
+    border-top: #006699;
+    border-bottom: #006699;
+    border-right: #006699;
+    border-left: #006699;
+}
+#fila{
+    font-size: 13px;
+    background: #b9c9fe;
+    color: #039;
 }

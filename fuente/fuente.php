@@ -20,9 +20,9 @@
             <table border="1" cellspacing="1" cellpadding="1">
                 <tr>
                     <td>Cliente</td>
-                    <td><input type="text" name="txtCliente"></td>
+                    <td colspan="3"><input type="text" name="txtCliente" size="50"></td>
                 </tr>
-                <tr>
+                <tr id="fila" >
                     <td>Listado de Productos</td>
                     <td>Cantidad </td>
                     <td>Precio</td>
@@ -30,35 +30,35 @@
                 </tr>
                 <tr>
                     <td>Ensalada de frutas</td>
-                    <td><input type="text" name="txtEnsalada"></td>
+                    <td><input type="text" name="txtEnsalada" size="15"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Jugo de frutas</td>
-                    <td><input type="text" name="txtJugo"></td>
+                    <td><input type="text" name="txtJugo" size="15"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Helado</td>
-                    <td><input type="text" name="txtHelado"></td>
+                    <td><input type="text" name="txtHelado" size="15"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Sandwitch</td>
-                    <td><input type="text" name="txtSandwitch"></td>
+                    <td><input type="text" name="txtSandwitch" size="15"></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Finalizar venta"></td>
+                    <td  colspan="3"><input type="submit" value="Finalizar venta"></td>
                 </tr>
                 <tr>
                     <td>Total a Pagar</td>
-                    <td></td>
+                    <td colspan="3"></td>
                 </tr>
             </table>
         </form>
