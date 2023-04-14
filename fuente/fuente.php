@@ -16,7 +16,52 @@
         ?>
     </header>
     <section>
-
+        <form action="fuente.php" method="post">
+            <table border="1" cellspacing="1" cellpadding="1">
+                <tr>
+                    <td>Cliente</td>
+                    <td><input type="text" name="txtCliente"></td>
+                </tr>
+                <tr>
+                    <td>Listado de Productos</td>
+                    <td>Cantidad </td>
+                    <td>Precio</td>
+                    <td>Sub Total</td>
+                </tr>
+                <tr>
+                    <td>Ensalada de frutas</td>
+                    <td><input type="text" name="txtEnsalada"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Jugo de frutas</td>
+                    <td><input type="text" name="txtJugo"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Helado</td>
+                    <td><input type="text" name="txtHelado"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sandwitch</td>
+                    <td><input type="text" name="txtSandwitch"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Finalizar venta"></td>
+                </tr>
+                <tr>
+                    <td>Total a Pagar</td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
     </section>
     <footer>
         <?php
