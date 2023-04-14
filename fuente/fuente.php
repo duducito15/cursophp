@@ -44,22 +44,22 @@
                     <td>Jugo de frutas</td>
                     <td><input type="text" name="txtJugo" size="15"
                     value="<?php echo $cantJugo;?>"></td>
-                    <td><?php echo $jugo; ?></td>
-                    <td><?php echo $subtotalJugo; ?></td>
+                    <td><?php echo number_format( $jugo,2); ?></td>
+                    <td><?php echo number_format( $subtotalJugo,2); ?></td>
                 </tr>
                 <tr>
                     <td>Helado</td>
                     <td><input type="text" name="txtHelado" size="15"
                     value="<?php echo $cantHelado;?>"></td>
-                    <td><?php echo $helado; ?></td>
-                    <td><?php echo $subtotalHelado; ?></td>
+                    <td><?php echo number_format( $helado,2); ?></td>
+                    <td><?php echo number_format( $subtotalHelado,2); ?></td>
                 </tr>
                 <tr>
                     <td>Sandwitch</td>
                     <td><input type="text" name="txtSandwitch" size="15"
                     value="<?php echo $cantSandwitch;?>"></td>
-                    <td><?php echo $sandwitch; ?></td>
-                    <td><?php echo $subtotalSandwitch; ?></td>
+                    <td><?php echo number_format( $sandwitch,2); ?></td>
+                    <td><?php echo number_format( $subtotalSandwitch,2); ?></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -71,8 +71,8 @@
                 ?>
                 <tr>
                     <td>Total a Pagar</td>
-                    <td colspan="3">
-                        <?php echo $total;?>
+                    <td id="codigo" colspan="3">
+                        <?php echo number_format( $total,2);?>
                     </td>
                 </tr>
                 <?php
