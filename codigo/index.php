@@ -27,23 +27,39 @@
         $mNombres = "";
         $mFecnac = "";
 
-        $permitidos = "/^[A-Z áéíóúÁÉÍÓÚñÑ]{1,100}";
-        
-        if (!preg_match($permitidos,$apellidos) || !is_string($apellidos)) {
+        $permitidos = "/^[a-zA-Z áéíóúÁÉÍÓÚñÑ]{1,100}";
+
+        if (!preg_match($permitidos, $apellidos) || !is_string($apellidos)) {
             $mApellidos = "Registre apellidos!!!";
         }
-        if (!preg_match($permitidos,$nombres) || !is_string($nombres)) {
+        if (!preg_match($permitidos, $nombres) || !is_string($nombres)) {
             $mNombres = "Registre nombres!!!";
         }
-        if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/',$fecnac)) {
+        if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/', $fecnac)) {
             $mFecnac = "Fecha no valida!!!";
         }
 
-        
+        switch ($estado) {
+            case 'Soltero':
+                $cEstado = 1;
+                break;
+            case 'Casado':
+                $cEstado = 2;
+                break;
+            case 'Viudo':
+                $cEstado = 3;
+                break;
+            case 'Divorciado':
+                $cEstado = 4;
+                break;
+        }
+        if ($sexo == 'M' ) $cSexo = 1;
+        if ($sexo == 'F' ) $cSexo = 2;
+
         
         ?>
         <form action="index.php" method="post">
-            <table border="0" width="700" cellspacing="0" cellpading ="0">
+            <table border="0" width="700" cellspacing="0" cellpading="0">
                 <tr>
                     <td>Apellidos: </td>
                     <td><input type="text" name="txtApellidos" size="50" placeholder="Ingrese apellidos"></td>
@@ -75,8 +91,8 @@
                 <tr>
                     <td>Sexo: </td>
                     <td>
-                        <input type="radio" name="rbSexo" value="M" >Masculino
-                        <input type="radio" name="rbSexo" value="F" >Femenino
+                        <input type="radio" name="rbSexo" value="M">Masculino
+                        <input type="radio" name="rbSexo" value="F">Femenino
                     </td>
                     <td></td>
                 </tr>
@@ -84,7 +100,7 @@
                     <td></td>
                     <td><input type="submit" value="Autogenerar còdigo" name="btnGenerar"></td>
                     <td></td>
-                </tr>   
+                </tr>
 
             </table>
 
