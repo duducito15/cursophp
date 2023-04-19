@@ -19,32 +19,43 @@
             <table border="0" width="700" cellspacing="0" cellpading ="0">
                 <tr>
                     <td>Apellidos: </td>
-                    <td><input type="text" name="txtApellidos" size="70" placeholder="Ingrese apellidos"></td>
+                    <td><input type="text" name="txtApellidos" size="50" placeholder="Ingrese apellidos"></td>
                     <td>CODIGO GENERADO</td>
                 </tr>
                 <tr>
+                    <td>Nombres: </td>
+                    <td><input type="text" name="txtNombres" size="50" placeholder="Ingrese nombres"></td>
                     <td></td>
+                </tr>
+                <tr>
+                    <td>Fecha de nacimiento: </td>
+                    <td><input type="text" name="txtFecnac" size="30" placeholder="dd/mm/aaaa"></td>
                     <td></td>
+                </tr>
+                <tr>
+                    <td>Estado civil: </td>
+                    <td>
+                        <select name="selEstado" id="">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                            <option value="Divorciado">Divorciado</option>
+
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sexo: </td>
+                    <td>
+                        <input type="radio" name="rbSexo" value="M" >Masculino
+                        <input type="radio" name="rbSexo" value="F" >Femenino
+                    </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
+                    <td><input type="submit" value="Autogenerar còdigo" name="btnGenerar"></td>
                     <td></td>
                 </tr>   
 
