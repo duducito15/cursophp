@@ -15,6 +15,33 @@
         <img src="https://img.freepik.com/fotos-premium/equipo-gente-negocios-trabajando-juntos-oficina-hablando-discutiendo-banner-fondo-trabajo-equipo_44344-3554.jpg" alt="" height="150" width="700">
     </header>
     <section>
+        <?php
+        error_reporting(0);
+        $apellidos = $_POST['txtApellidos'];
+        $nombres = $_POST['txtNombres'];
+        $fecnac = $_POST['txtFecnac'];
+        $estado = $_POST['selEstado'];
+        $sexo = $_POST['rbSexo'];
+
+        $mApellidos = "";
+        $mNombres = "";
+        $mFecnac = "";
+
+        $permitidos = "/^[A-Z áéíóúÁÉÍÓÚñÑ]{1,100}";
+        
+        if (!preg_match($permitidos,$apellidos) || !is_string($apellidos)) {
+            $mApellidos = "Registre apellidos!!!";
+        }
+        if (!preg_match($permitidos,$nombres) || !is_string($nombres)) {
+            $mNombres = "Registre nombres!!!";
+        }
+        if (!preg_match('/^\d{1,2}\/\d{1,2}\/\d{4}$/',$fecnac)) {
+            $mFecnac = "Fecha no valida!!!";
+        }
+
+        
+        
+        ?>
         <form action="index.php" method="post">
             <table border="0" width="700" cellspacing="0" cellpading ="0">
                 <tr>
