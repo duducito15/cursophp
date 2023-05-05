@@ -42,6 +42,8 @@
     }else {
         echo "<br>Error al implementar la consulta!!!";
     }
+    $n = mysqli_num_rows($rs);
+    echo "El numero de clientes registrados es:".$n;
     
     //Cerrar la conexiòn al Gestor de Base de datos
     $ccn = mysqli_close($cn);
