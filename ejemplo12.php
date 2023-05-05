@@ -33,7 +33,7 @@ foreach($notas4 as $nombre=>$nota){
     echo $elementos[1]."<br>";
 }*/
 
-print_r($notas4);
+//print_r($notas4);
 
 //Crear un arreglo en el cual se pueda almacenar el numero de ventas realizadas
 // por un empleado; minimo 10 empleados
@@ -42,8 +42,19 @@ print_r($notas4);
 //Ordenamiento: sort(array), rsort(array), asort(array_asociativo)
 //arsort(array_asociativo), ksort(array_asociativo), krsort(array_asociativo)
 
-$electrodomesticos = array("Refrigerador", "cocina", "calentador", 
-"aire acondicionado", "TV", "parrilla", "microondas");
+$electrodomesticos = array("refrigerador", "cocina", "calentador", 
+"aire acondicionado", "tv", "parrilla", "microondas");
+//echo "Array original<BR>";
+//print_r($electrodomesticos);
+
+sort($electrodomesticos);
+
+foreach($electrodomesticos as $indice => $valor){
+    echo "electrodomestico[" . $indice . "] = " . $valor . "<br>";
+}
+
+
+
 
 
 ?>
