@@ -10,8 +10,7 @@
     <?php
         include('cnventas.php');
         $rs = mysqli_query($cn, "SELECT B.* FROM BOLETA B INNER JOIN CLIENTE C ON B.ID_CLIENTE=C.ID_CLIENTE
-        WHERE CONCAT(C.NOMBRES,' ',C.PATERNO,' ',C.MATERNO) = 'CARLOS LOPEZ HURTADO'
-        ");
+        WHERE CONCAT(C.NOMBRES,' ',C.PATERNO,' ',C.MATERNO) = 'CARLOS LOPEZ HURTADO'");
         $n = mysqli_num_rows($rs);
         echo "El numero total de BOLETAS ASOCIADAS A CARLOS LOPEZ HURTADO es: ".$n;
 
