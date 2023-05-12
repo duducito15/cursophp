@@ -46,22 +46,20 @@
             </table>
 
             <?php
-            include('cnventas.php');
+            //include('cnventas.php');
             $codigoDistrito = $_POST['selDistrito'];
-            echo $codigoDistrito;
+            
             $consulta = "SELECT C.ID_CLIENTE AS CODIGO, 
                             CONCAT(C.NOMBRES,' ', C.PATERNO,' ',C.MATERNO) AS CLIENTE, 
                             FONO AS TELEFONO, DESCRIPCION AS DISTRITO 
                             FROM CLIENTE C INNER JOIN DISTRITO D 
                             ON C.ID_DISTRITO = D.ID_DISTRITO
-                            WHERE C.ID_DISTRITO = '.$codigoDistrito.'";
+                            WHERE C.ID_DISTRITO = TRIM('$codigoDistrito')";
+           
             $rs1 = mysqli_query($cn, $consulta);
-            echo json_encode($rs1);
-
             $total = mysqli_num_rows($rs1);
-            echo $total;
+            
             ?>
-
             <h4>CLIENTES POR DISTRITO: <?php echo $codigoDistrito ?></h5>
                 <table border="0" width="700" cellpadding="1" cellspacing="1">
                     <tr>
