@@ -76,6 +76,12 @@
                             <td><?php echo $r1['DISTRITO'] ?></td>
                         </tr>
                     <?php } ?>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>TOTAL CLIENTES:</td>
+                        <td> <?php echo $total; ?></td>
+                    </tr>
                 </table>
         </form>
     </section>
