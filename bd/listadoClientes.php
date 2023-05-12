@@ -15,7 +15,7 @@
                         CONCAT(C.NOMBRES,' ',C.PATERNO,' ',C.MATERNO) AS CLIENTE, 
                         D.DESCRIPCION AS DISTRITO FROM CLIENTE C INNER JOIN DISTRITO D 
                         ON C.ID_DISTRITO = D.ID_DISTRITO");
-        $r = mysqli_fetch_assoc($rs);
+        $n = mysqli_num_rows($rs);
     ?>
 <header>
     <h3>LISTADO DE CLIENTES</h3>
@@ -34,7 +34,13 @@
         <td><?php echo $r['DISTRITO']?></td>
     </tr>
     <?php } ?>
-
+    <?php while($r = mysqli_fetch_assoc($rs)){?>
+    <tr>
+        <td><?php echo $r['CODIGO']?></td>
+        <td><?php echo $r['CLIENTE']?></td>
+        <td><?php echo $r['DISTRITO']?></td>
+    </tr>
+    <?php } ?>
 </table>
 </section>
 <footer>
@@ -43,3 +49,7 @@
 </body>
 
 </html>
+
+Listado de Clientes por DISTRITO
+Implementar una aplicacion web con PHP y MYSQL que permita lsitar segun el DISTRITO
+seleccionado por el usuario.
