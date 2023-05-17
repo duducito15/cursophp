@@ -7,6 +7,10 @@ body{
 }
 table{
     margin: auto;
+    background-color: antiquewhite;
+}
+h3, h5{
+    text-align: center;
 }
 img{
     margin: auto;
@@ -27,4 +31,7 @@ td{
 #codigo{
     color: blue;
     font-size: 26px;
+}
+table th{
+    background-color: #b9c9fe;    
 }
