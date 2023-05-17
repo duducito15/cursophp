@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    error_log(0);
+    error_reporting(0);
     include('cnventas.php');
     ?>
 
@@ -40,19 +40,40 @@
                 <th>NOMBRE CLIENTE</th>
                 <th>SUBTOTAL</th>
             </tr>
+            <?php
+            $codigoCliente = $_POST['txtCodigo'];
+            $consulta = "SELECT B.NUM_BOLETA, B.FECHA, C.ID_CLIENTE, 
+                                CONCAT(C.NOMBRES,' ',C.PATERNO,' ',C.MATERNO) AS CLIENTE,
+                                SUM(P.PRECIO * D.CANTIDAD) AS SUBTOTAL
+                        FROM CLIENTE C INNER JOIN BOLETA B ON C.ID_CLIENTE = B.ID_CLIENTE
+                                    INNER JOIN DETALLEBOLETA D ON D.NUM_BOLETA = B.NUM_BOLETA
+                                    INNER JOIN PRODUCTO P ON P.ID_PRODUCTO =D.ID_PRODUCTO
+                        GROUP BY B.NUM_BOLETA, B.FECHA, C.ID_CLIENTE, 
+                                CONCAT(C.NOMBRES,' ',C.PATERNO,' ',C.MATERNO)
+                        HAVING C.ID_CLIENTE = TRIM('$codigoCliente')";
+           
+            $rs = mysqli_query($cn, $consulta);
+
+            $acumulado = 0;
+
+            foreach ($rs as $r) { ?>
+                <tr>
+                    <td><?php echo $r['NUM_BOLETA'] ?></td>
+                    <td><?php echo $r['FECHA'] ?></td>
+                    <td><?php echo $r['ID_CLIENTE'] ?></td>
+                    <td><?php echo $r['CLIENTE'] ?></td>
+                    <td><?php echo $r['SUBTOTAL'] ?></td>
+                </tr>
+            <?php $acumulado = $acumulado + $r['SUBTOTAL'];
+            } ?>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>COSTO ACUMULADO</td>
-                <td>12000</td>
+                <td>TOTAL ACUMULADO</td>
+                <td>
+                    <?php echo number_format($acumulado, 2); ?>
+                </td>
             </tr>
         </table>
     </section>
