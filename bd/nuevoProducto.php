@@ -14,6 +14,10 @@
         <h3>NUEVO PRODUCTO</h3>
     </header>
     <section>
+        <?php
+        error_reporting(0);
+        include('cnventas.php');
+        ?>
         <form action="nuevoProducto.php" method="post">
             <table>
                 <tr>
@@ -48,10 +52,35 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="AGREGAR"></td>
+                    <td><input type="submit" value="AGREGAR" name="btnAgregar"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <?php
+                        if (isset($_POST['btnAgregar'])) {
+                            $codigo = $_POST['txtCodigo'];
+                            $descripcion = $_POST['txtDescripcion'];
+                            $precio = $_POST['txtPrecio'];
+                            $stock = $_POST['txtStock'];
+                            $fecha = $_POST['txtFecha'];
+                            
+                            $rs = mysqli_query($cn, "INSERT INTO PRODUCTO 
+                                        VALUES('$codigo','$descripcion',$precio,$stock,'$fecha')");
+                            
+                            if ($rs) {
+                                echo "Registro de producto correcto!!!";
+                            } else {
+                                echo "Ocurrio un error " . mysqli_error($cn);
+                            }
+                        }
+
+                        ?>
+                    </td>
+
                 </tr>
             </table>
         </form>
+
     </section>
     <footer>
         <h5>Todos los derecho reservados @2023</h5>
