@@ -19,8 +19,8 @@
         include('cnventas.php');
         $codigo = '';
 
-        if (isset($_POST['btnBuscar'])) {
-            $boton = $_POST['btnBuscar'];
+        if (isset($_POST['btnCalcular'])) {
+            $boton = $_POST['btnCalcular'];
             $codigo = $_POST['txtCodigo'];
             if ($boton == "BUSCAR") {
                 $rs = mysqli_query($cn, "SELECT * FROM PRODUCTO 
@@ -44,15 +44,12 @@
                 SET DESCRIPCION = '$des', PRECIO= $pre, STOCK=$sto, FECHA_VENC='$fec'
                 WHERE ID_PRODUCTO = '$cod'");
 
-                $n = mysqli_num_rows($rs1);
-                if ($n != 0) {
+                $n1 = mysqli_num_rows($rs1);
+                if ($n1 != 0) {
                     echo "<script>alert('Producto ACTUALIZADO')</script>";
-                }
+                } 
             }
         }
-
-
-
         ?>
         <form action="actualizarProducto.php" method="post">
             <table width="550" border="1" cellspacing="1" cellpadding="1">
@@ -62,7 +59,7 @@
                         <input type="text" name="txtCodigo" value="<?php echo $miProducto['ID_PRODUCTO'] ?>">
                     </td>
                     <td>
-                        <input type="submit" name="btnBuscar" value="BUSCAR">
+                        <input type="submit" name="btnCalcular" value="BUSCAR">
                     </td>
                 </tr>
             </table>
@@ -89,7 +86,7 @@
                         <input type="text" name="txtFecha" value="<?php echo $miProducto['FECHA_VENC'] ?>">
                     </td>
                     <td colspan="2">
-                        <input type="submit" value="ACTUALIZAR">
+                        <input type="submit" name = "btnCalcular" value="ACTUALIZAR">
                     </td>
 
                 </tr>
