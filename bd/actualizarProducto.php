@@ -26,7 +26,7 @@
                 $rs = mysqli_query($cn, "SELECT * FROM PRODUCTO 
                                             WHERE ID_PRODUCTO = '$codigo'");
                 $n = mysqli_num_rows($rs);
-                if ($n == 0){
+                if ($n == 0) {
                     echo "<script>alert('Producto NO EXISTE')</script>";
                 }
 
@@ -34,52 +34,64 @@
             }
 
             if ($boton == "ACTUALIZAR") {
-                
-            }
+                $cod = $codigo;
+                $des = $_POST['txtDescripcion'];
+                $pre = $_POST['txtPrecio'];
+                $sto = $_POST['txtStock'];
+                $fec = $_POST['txtFecha'];
 
+                $rs1 = mysqli_query($cn, "UPDATE PRODUCTO 
+                SET DESCRIPCION = '$des', PRECIO= $pre, STOCK=$sto, FECHA_VENC='$fec'
+                WHERE ID_PRODUCTO = '$cod'");
+
+                $n = mysqli_num_rows($rs1);
+                if ($n != 0) {
+                    echo "<script>alert('Producto ACTUALIZADO')</script>";
+                }
+            }
         }
 
 
 
         ?>
-        <form action="actuzalizarProducto.php" method="post">
-            <table width="550" border="1" cellspacing="1" cellpadding ="1">
+        <form action="actualizarProducto.php" method="post">
+            <table width="550" border="1" cellspacing="1" cellpadding="1">
                 <tr>
                     <td>Ingrese codigo del producto</td>
                     <td>
-                        <input type="text" name="txtCodigo">
+                        <input type="text" name="txtCodigo" value="<?php echo $miProducto['ID_PRODUCTO'] ?>">
                     </td>
                     <td>
                         <input type="submit" name="btnBuscar" value="BUSCAR">
                     </td>
                 </tr>
             </table>
-            <table width="550" border="1" cellspacing="1" cellpadding ="1">
+            <table width="550" border="1" cellspacing="1" cellpadding="1">
                 <tr>
                     <td>DESCRIPCIÓN</td>
                     <td colspan="3">
-                        <input type="text" name="txtDescripcion" value="">
+                        <input type="text" name="txtDescripcion" value="<?php echo $miProducto['DESCRIPCION'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>PRECIO</td>
                     <td>
-                        <input type="text" name="txtPrecio">
+                        <input type="text" name="txtPrecio" value="<?php echo $miProducto['PRECIO'] ?>">
                     </td>
                     <td>STOCK</td>
                     <td>
-                        <input type="text" name="txtStock">
+                        <input type="text" name="txtStock" value="<?php echo $miProducto['STOCK'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>FECHA VENCIMIENTO</td>
                     <td>
-                        <input type="text" name="txtFecha">
+                        <input type="text" name="txtFecha" value="<?php echo $miProducto['FECHA_VENC'] ?>">
                     </td>
                     <td colspan="2">
                         <input type="submit" value="ACTUALIZAR">
                     </td>
-                    
+
                 </tr>
             </table>
         </form>
