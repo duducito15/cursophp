@@ -14,8 +14,36 @@
         <h3>ACTUALIZACIÓN DE DATOS DEL PRODUCTO</h3>
     </header>
     <section>
+        <?php
+        error_reporting(0);
+        include('cnventas.php');
+        $codigo = '';
+
+        if (isset($_POST['btnBuscar'])) {
+            $boton = $_POST['btnBuscar'];
+            $codigo = $_POST['txtCodigo'];
+            if ($boton == "BUSCAR") {
+                $rs = mysqli_query($cn, "SELECT * FROM PRODUCTO 
+                                            WHERE ID_PRODUCTO = '$codigo'");
+                $n = mysqli_num_rows($rs);
+                if ($n == 0){
+                    echo "<script>alert('Producto NO EXISTE')</script>";
+                }
+
+                $miProducto = mysqli_fetch_array($rs);
+            }
+
+            if ($boton == "ACTUALIZAR") {
+                
+            }
+
+        }
+
+
+
+        ?>
         <form action="actuzalizarProducto.php" method="post">
-            <table width="550" border="1">
+            <table width="550" border="1" cellspacing="1" cellpadding ="1">
                 <tr>
                     <td>Ingrese codigo del producto</td>
                     <td>
@@ -26,7 +54,7 @@
                     </td>
                 </tr>
             </table>
-            <table width="550" border="1">
+            <table width="550" border="1" cellspacing="1" cellpadding ="1">
                 <tr>
                     <td>DESCRIPCIÓN</td>
                     <td colspan="3">
