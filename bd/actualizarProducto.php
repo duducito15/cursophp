@@ -26,8 +26,7 @@
             $codigo = $_POST['txtCodigo'];
 
             if ($boton == "BUSCAR") {
-                $rs = mysqli_query($cn, "SELECT * FROM PRODUCTO 
-                                            WHERE ID_PRODUCTO = '$codigo'");
+                $rs = mysqli_query($cn, "CALL sp_buscarproducto('$codigo')");
                 $n = mysqli_num_rows($rs);
                 if ($n == 0) 
                     echo "<script>alert('Producto NO EXISTE')</script>";

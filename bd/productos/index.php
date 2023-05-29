@@ -40,6 +40,7 @@
                 $pre = $_POST['txtPrecio'];
                 $sto = $_POST['txtStock'];
                 $fec = $_POST['txtFecha'];
+                $fec = $_POST['txtFecha'];
                 
                 $rs = mysqli_query($cn, "INSERT INTO PRODUCTO 
                             VALUES('$cod','$des',$pre,$sto,'$fec')");
