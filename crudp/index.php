@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
 </head>
 
@@ -10,8 +11,7 @@
     <header>
         <?php
         include('encabezado.php');
-        include('cnventas.php')
-
+        include('cnventas.php');
         ?>
     </header>
     <section>
@@ -31,7 +31,7 @@
         </table>
         <table border="0" cellpading="5" cellspacing="0" width="550">
             <tr>
-                <th>CODIGO</th>
+                <th>CÓDIGO</th>
                 <th>DESCRIPCIÓN</th>
                 <th>PRECIO</th>
                 <th>STOCK</th>
