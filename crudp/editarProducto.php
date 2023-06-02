@@ -24,7 +24,7 @@
         include('cnventas.php');
         $codigo = $_GET['codigo'];
 
-        $rs = mysqli_query($cn, "CALL sp_buscarproducto('$codigo')");
+        $rs = mysqli_query($cn, "CALL sp_productoBuscar('$codigo')");
         $n = mysqli_num_rows($rs);
         if ($n == 0)
             echo "<script>alert('Producto NO EXISTE')</script>";
