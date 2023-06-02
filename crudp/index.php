@@ -56,7 +56,7 @@
                     <td><?php echo $r['STO'] ?></td>
                     <td><?php echo $r['FEC'] ?></td>
                     <td>
-                        <a href="editarProducto.php">
+                        <a href="editarProducto.php?codigo=<?php echo $r['COD']; ?>">
                             <i class="bi bi-pencil-fill"></i>
                         </a>
                     </td>

@@ -21,7 +21,7 @@
     <section>
 
         <form action="" method="post">
-            <table>
+            <table class="table table-sm">
                 <tr>
                     <td>CODIGO PRODUCTO</td>
                     <td>
@@ -53,8 +53,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><input type="submit" value="AGREGAR" name="btnAgregar"></td>
+                    <td><input type="submit" value="CANCELAR" name="btnCancelar" class="btn btn-danger"></td>
+                    <td><input type="submit" value="AGREGAR" name="btnAgregar" class="btn btn-success"></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -85,7 +85,7 @@
 
     </section>
     <footer>
-        <h5>Todos los derecho reservados @2023</h5>
+        
     </footer>
 </body>
 
