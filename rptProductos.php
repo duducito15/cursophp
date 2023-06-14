@@ -5,7 +5,7 @@ $pdf = new FPDF('P','pt','A4');
 //añadir una pagina
 $pdf->AddPage();
 //
-$pdf->Image('logo.jpg',10,22,120,120);
+$pdf->Image('logo.png',10,22,160,120);
 
 //Definicion del encabezado
 $pdf->SetFont('helvetica','B',14);
